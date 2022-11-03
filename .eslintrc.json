@@ -1,0 +1,63 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks",
+    "simple-import-sort",
+    "prettier",
+    "@emotion"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "@emotion/pkg-renaming": "error",
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": ["error", { "singleQuote": true }],
+    "max-len": "off",
+    "no-duplicate-imports": "error",
+    "camelcase": "error",
+    "semi-spacing": "error",
+    "curly": "error",
+    "default-case": "error",
+    "eqeqeq": ["error", "always"],
+    "max-depth": ["error", 4],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "max-lines-per-function": [
+      "warn",
+      { "max": 250, "skipBlankLines": true, "skipComments": true }
+    ],
+    "simple-import-sort/imports": [
+      "error",
+      { "groups": [["^\\u0000", "^@?\\w", "^[^.]", "^\\."]] }
+    ],
+    "simple-import-sort/exports": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "overrides": [
+    {
+      "files": ["src/pages/**"],
+      "rules": {
+        "max-lines-per-function": "off"
+      }
+    }
+  ]
+}

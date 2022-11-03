@@ -1,0 +1,21 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+##
+trigger:
+- main
+- uat
+- develop
+pool:
+  name: default
+
+steps:
+- script: echo Hello, world!
+- script: |
+    docker build -f Dockerfile -t containerregistrylfglobaltech.azurecr.io/fe:$(Build.BuildId) .
+  displayName: 'Run build images script'
+- script: |
+    az acr login --name containerregistrylfglobaltech
+    docker push containerregistrylfglobaltech.azurecr.io/fe:$(Build.BuildId)
+  displayName: 'Run push images script'
