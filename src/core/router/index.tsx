@@ -28,6 +28,16 @@ const routesConfig: RouteObject[] = [
       },
       {
         element: <BlankLayout />,
+        children: [],
+      },
+
+      {
+        // authen routes
+        element: (
+          <NonAuthenticated>
+            <DefaultLayout />
+          </NonAuthenticated>
+        ),
         children: [
           {
             path: RoutePath.Login,
@@ -45,16 +55,6 @@ const routesConfig: RouteObject[] = [
               </NonAuthenticated>
             ),
           },
-        ],
-      },
-
-      {
-        element: (
-          <ProtectedRoute>
-            <DefaultLayout />
-          </ProtectedRoute>
-        ),
-        children: [
           {
             path: RoutePath.Index,
             element: <HomePage />,

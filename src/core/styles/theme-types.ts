@@ -5,7 +5,10 @@ declare module '@emotion/react' {
     [key: string]: T;
   }
   interface Colors {
-    primary: string;
+    primary: Model<string>;
+    secondary: Model<string>;
+    gadient: string;
+    text: Model<string>;
     yellow: Model<string>;
     red: Model<string>;
     orange: Model<string>;
@@ -23,5 +26,6 @@ declare module '@emotion/react' {
     zIndex: Model<number>;
     borderRadius: Model<string>;
     boxShadow: Model<string>;
+    height: Model<string>;
   }
 }

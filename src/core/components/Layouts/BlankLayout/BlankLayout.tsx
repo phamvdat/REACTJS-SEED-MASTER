@@ -1,9 +1,12 @@
+import Icon from 'core/components/BaseUI/Icon';
 import { Outlet } from 'react-router-dom';
 
 const BlankLayout = () => {
   return (
     <>
-      <h6>Blank Layout</h6>
+      <header>
+        <Icon icon="logo-solid" />
+      </header>
       <Outlet />
     </>
   );

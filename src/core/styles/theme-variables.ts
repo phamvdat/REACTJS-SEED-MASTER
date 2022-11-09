@@ -32,11 +32,43 @@ export const themeLight = css`
 export const theme = {
   container: '1280px',
   background: {
-    light: '#ffffff',
-    dark: '#171717',
+    light: '#F1F2F6',
+    dark: '#100E0E',
   },
   colors: {
-    primary: '#FACC15',
+    primary: {
+      100: '#FF3838',
+      200: '#2C2C2C',
+      300: '#100E0E',
+      400: '#FFFFFF',
+      500: '#F1F2F6',
+      600: 'rgba(0, 0, 0, 0.1)',
+      700: '#FF4B26',
+      800: '#1877F2',
+      900: '#55ACEE',
+      1000: 'linear-gradient(45deg,#A908C7 100%,#FE8D43 100%)',
+    },
+    secondary: {
+      100: '#20BF6B',
+      200: '#0A84FF',
+      300: '#FED51B',
+      400: 'rgba(255, 56, 56, 0.15)',
+      500: '#D1D9E2',
+      600: '#636E72',
+      650: '#4F4F4F',
+      700: '#212121',
+      750: '#383838',
+      800: 'rgba(0, 0, 0, 0.8)',
+      900: '#767676',
+    },
+    gadient: 'linear-gradient(90deg, #FF3838 0%, #AD100F 100%)',
+    text: {
+      100: '#212121',
+      200: 'rgba(33, 33, 33, 0.8)',
+      300: '#747D8C',
+      400: 'FFFFFF',
+      500: 'rgba(255, 255, 255, 0.8)',
+    },
     yellow: {
       50: '#FEFCE8',
       300: '#FDE047',
@@ -97,21 +129,24 @@ export const theme = {
     8: '32px',
     9: '36px',
     10: '48px',
-    11: '64px',
-    12: '80px',
-    13: '160px',
+    11: '50px',
+    12: '64px',
+    13: '80px',
+    14: '100px',
+    15: '160px',
   },
   fontFamily: {
-    primary: 'Lexend',
-    secondary: 'Tahoma',
+    primary: 'Quicksand',
+    secondary: 'Lexend',
+    Tertiary: 'Tahoma',
   },
   fontSize: {
-    xs: '1rem',
-    sm: '1.2rem',
-    md: '1.4rem',
-    lg: '1.6rem',
-    xl: '2rem',
-    '2xl': '2.4rem',
+    1: '14px',
+    2: '16px',
+    3: '20px',
+    4: '24px',
+    5: '28px',
+    6: '40px',
   },
 
   zIndex: {
@@ -124,12 +159,16 @@ export const theme = {
   },
 
   borderRadius: {
-    sm: '4px',
+    sm: '5px',
+    md: '10px',
     full: '50%',
   },
 
   boxShadow: {
     sm: '4px 4px 10px rgba(0, 0, 0, 0.04)',
     md: '0px 0px 8px rgba(0, 0, 0, 0.08)',
+  },
+  height: {
+    header: '55px',
   },
 } as Theme;

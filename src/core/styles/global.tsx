@@ -28,7 +28,7 @@ const fontFace = css`
 
 const reset = css`
   * {
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     box-sizing: inherit;
   }
 

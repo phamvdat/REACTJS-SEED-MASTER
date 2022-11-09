@@ -70,7 +70,7 @@ const Radio = (props: RadioProps) => {
           ({ colors }: Theme) =>
             css({
               '&:checked ~ span:nth-of-type(2)': {
-                color: activeColorLabel ? colors?.primary : '',
+                color: activeColorLabel ? colors?.primary[100] : '',
               },
             }),
         ]}

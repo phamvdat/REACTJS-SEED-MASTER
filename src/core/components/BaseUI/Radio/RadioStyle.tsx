@@ -44,7 +44,7 @@ export const radioStyle = {
   input: ({ colors }: Theme) =>
     css({
       '&:checked ~ span:nth-of-type(1)': {
-        borderColor: colors?.primary,
+        borderColor: colors?.primary[100],
         '::after': {
           opacity: 1,
           transition: 'all 0.15s ease-in',
@@ -69,17 +69,17 @@ export const radioStyle = {
         height: '0px',
         transform: 'translate(-50%, -50%)',
         borderRadius: '50%',
-        backgroundColor: colors?.primary,
+        backgroundColor: colors?.primary[100],
         transition: 'all 0.15s ease-in-out',
         opacity: 0,
       },
       '&:focus': {
-        borderColor: colors?.primary,
+        borderColor: colors?.primary[100],
         outline: 'none',
         boxShadow: '0 0 1px 7px rgba(250, 204, 21, 0.3)',
       },
       '&:hover': {
-        borderColor: colors?.primary,
+        borderColor: colors?.primary[100],
         backgroundColor: 'var(--background-hover-focus)',
       },
       '&:active': {
@@ -88,7 +88,7 @@ export const radioStyle = {
     }),
 
   label: css({
-    color: 'var(--text-primary)',
+    color: 'var(--text-primary[100])',
   }),
 
   sm: css({

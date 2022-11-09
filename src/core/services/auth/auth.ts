@@ -7,6 +7,7 @@ import { ILoginPayload } from './types';
 export const authServive = {
   isAuthenticated(): boolean {
     return Boolean(jwtHelper.getToken());
+    // return true;
   },
 
   logout() {
