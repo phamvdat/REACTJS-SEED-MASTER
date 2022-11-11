@@ -53,39 +53,39 @@ export const buttonStyle = {
 
   fill: ({ colors }: Theme) =>
     css({
-      border: 'none',
-      color: colors?.neutral['900'],
-      backgroundColor: colors?.yellow['300'],
-      '&:hover': {
-        backgroundColor: colors?.yellow['400'],
-      },
-      ':disabled': {
-        backgroundColor: 'var(--background-third)',
-        color: colors?.neutral['400'],
-      },
+      // border: 'none',
+      // color: colors?.neutral['900'],
+      // backgroundColor: colors?.yellow['300'],
+      // '&:hover': {
+      //   backgroundColor: colors?.yellow['400'],
+      // },
+      // ':disabled': {
+      //   backgroundColor: 'var(--background-third)',
+      //   color: colors?.neutral['400'],
+      // },
     }),
   outlined: ({ colors }: Theme) =>
     css({
-      border: '1px solid var(--text-primary)',
-      backgroundColor: 'var(--background-primary)',
-      '&:hover': {
-        color: colors?.yellow['400'],
-        border: '1px solid',
-      },
-      ':disabled': {
-        color: 'var(--text-primary)',
-      },
+      // border: '1px solid var(--text-primary)',
+      // backgroundColor: 'var(--background-primary)',
+      // '&:hover': {
+      //   color: colors?.yellow['400'],
+      //   border: '1px solid',
+      // },
+      // ':disabled': {
+      //   color: 'var(--text-primary)',
+      // },
     }),
   text: ({ colors }: Theme) =>
     css({
-      border: 'none',
-      backgroundColor: 'transparent',
-      '&:hover': {
-        color: colors?.yellow['400'],
-      },
-      ':disabled': {
-        color: 'var(--text-primary)',
-      },
+      // border: 'none',
+      // backgroundColor: 'transparent',
+      // '&:hover': {
+      //   color: colors?.yellow['400'],
+      // },
+      // ':disabled': {
+      //   color: 'var(--text-primary)',
+      // },
     }),
 
   loading: css({

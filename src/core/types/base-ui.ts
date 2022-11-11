@@ -1,4 +1,4 @@
 export type ThemeType = 'light' | 'dark';
 export type SizeType = 'sm' | 'md' | 'lg' | undefined;
-export type ColorType = 'black' | 'white';
+export type ColorType = 'red' | 'blue' | 'yellow' | 'green' | 'black' | 'white';
 export type socialType = 'google' | 'facebook' | 'twitter' | 'instagram';

@@ -2,7 +2,6 @@ import { css, Global } from '@emotion/react';
 import LexendMedium from 'assets/fonts/Lexend/Lexend-Medium.ttf';
 import LexendRegular from 'assets/fonts/Lexend/Lexend-Regular.ttf';
 import LexendSemiBold from 'assets/fonts/Lexend/Lexend-SemiBold.ttf';
-import { radioMode } from 'core/components/BaseUI/Radio/RadioStyle';
 import { root, themeDark, themeLight } from './theme-variables';
 
 const fontFace = css`
@@ -35,6 +34,17 @@ const reset = css`
   *:not(.raw-content *) {
     margin: 0;
     padding: 0;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
   }
 
   html {
@@ -135,7 +145,6 @@ const GlobalStyles = () => {
       <Global
         styles={[root, fontFace, reset, resetTag, common, keyframes, themeDark, themeLight]}
       />
-      <Global styles={[radioMode]} />
     </>
   );
 };

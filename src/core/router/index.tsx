@@ -1,6 +1,7 @@
 import App from 'App';
 import Forbidden from 'core/components/Error/Forbidden';
 import NotFound from 'core/components/Error/NotFound';
+import AuthenLayout from 'core/components/Layouts/AuthenLayout/AuthenLayout';
 import BlankLayout from 'core/components/Layouts/BlankLayout';
 import DefaultLayout from 'core/components/Layouts/DefaultLayout';
 import ErrorLayout from 'core/components/Layouts/ErrorLayout';
@@ -30,14 +31,8 @@ const routesConfig: RouteObject[] = [
         element: <BlankLayout />,
         children: [],
       },
-
       {
-        // authen routes
-        element: (
-          <NonAuthenticated>
-            <DefaultLayout />
-          </NonAuthenticated>
-        ),
+        element: <AuthenLayout />,
         children: [
           {
             path: RoutePath.Login,
@@ -55,6 +50,16 @@ const routesConfig: RouteObject[] = [
               </NonAuthenticated>
             ),
           },
+        ],
+      },
+      {
+        // authen routes
+        element: (
+          <NonAuthenticated>
+            <DefaultLayout />
+          </NonAuthenticated>
+        ),
+        children: [
           {
             path: RoutePath.Index,
             element: <HomePage />,

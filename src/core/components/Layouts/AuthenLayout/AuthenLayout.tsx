@@ -1,13 +1,11 @@
 /** @jsxImportSource @emotion/react */
-
 import banner from 'assets/images/imgs/banner.png';
-import Header from 'core/components/Header';
-import RightBar from 'core/components/RightBar';
+import Header from 'core/components/Header/Header';
 import Sidebar from 'core/components/SideBar';
 import { Outlet } from 'react-router-dom';
-import { defaultLayoutStyle } from './DefaultLayoutStyle';
+import { defaultLayoutStyle } from '../DefaultLayout/DefaultLayoutStyle';
 
-const DefaultLayout = () => {
+export default function AuthenLayout() {
   return (
     <div className="container" css={defaultLayoutStyle.container}>
       <Header />
@@ -17,10 +15,7 @@ const DefaultLayout = () => {
         <div css={defaultLayoutStyle.Outlet}>
           <Outlet />
         </div>
-        <RightBar />
       </div>
     </div>
   );
-};
-
-export default DefaultLayout;
+}
