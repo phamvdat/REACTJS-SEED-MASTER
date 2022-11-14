@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { yupResolver } from '@hookform/resolvers/yup';
-import LongButton from 'core/components/BaseUI/Button/long-button/long-button';
+import Button from 'core/components/BaseUI/Button';
 import Icon from 'core/components/BaseUI/Icon';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
-import { formStyle } from './RegisterFormStyles';
+import { registerFormStyle } from './RegisterFormStyle';
 export type FormValues = {
   fullName: string;
   email: string;
@@ -57,17 +57,17 @@ const RegisterForm = ({ onSubmit }: { onSubmit: (data: FormValues) => void }) =>
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} css={[formStyle.self]}>
-        <div css={formStyle.fieldContainer}>
-          <label htmlFor="fulname" css={[formStyle.labelInput]}>
+      <form onSubmit={handleSubmit(onSubmit)} css={[registerFormStyle.self]}>
+        <div css={registerFormStyle.fieldContainer}>
+          <label htmlFor="fulname" css={[registerFormStyle.labelInput]}>
             Full name <span>(*)</span>:
           </label>
           <br />
           <div
             css={[
-              formStyle.containInput,
-              errors.fullName && formStyle.containInputError,
-              getValues().fullName && !errors.fullName && formStyle.containInputSuccess,
+              registerFormStyle.containInput,
+              errors.fullName && registerFormStyle.containInputError,
+              getValues().fullName && !errors.fullName && registerFormStyle.containInputSuccess,
             ]}
           >
             <span style={{ width: '20px' }}>
@@ -86,16 +86,16 @@ const RegisterForm = ({ onSubmit }: { onSubmit: (data: FormValues) => void }) =>
           {errors.fullName && <h6>{errors.fullName?.message}</h6>}
         </div>
 
-        <div css={formStyle.fieldContainer}>
-          <label htmlFor="email" css={[formStyle.labelInput]}>
+        <div css={registerFormStyle.fieldContainer}>
+          <label htmlFor="email" css={[registerFormStyle.labelInput]}>
             Email: <span>(*)</span>:
           </label>
           <br />
           <div
             css={[
-              formStyle.containInput,
-              errors.email && formStyle.containInputError,
-              getValues().email && !errors.email && formStyle.containInputSuccess,
+              registerFormStyle.containInput,
+              errors.email && registerFormStyle.containInputError,
+              getValues().email && !errors.email && registerFormStyle.containInputSuccess,
             ]}
           >
             <span style={{ width: '20px' }}>
@@ -109,16 +109,16 @@ const RegisterForm = ({ onSubmit }: { onSubmit: (data: FormValues) => void }) =>
           {errors.email && <h6>{errors.email?.message}</h6>}
         </div>
 
-        <div css={formStyle.fieldContainer}>
-          <label htmlFor="phone" css={[formStyle.labelInput]}>
+        <div css={registerFormStyle.fieldContainer}>
+          <label htmlFor="phone" css={[registerFormStyle.labelInput]}>
             Phone
           </label>
           <br />
           <div
             css={[
-              formStyle.containInput,
-              errors.phone && formStyle.containInputError,
-              getValues().phone && !errors.phone && formStyle.containInputSuccess,
+              registerFormStyle.containInput,
+              errors.phone && registerFormStyle.containInputError,
+              getValues().phone && !errors.phone && registerFormStyle.containInputSuccess,
             ]}
           >
             <span style={{ width: '30px', marginRight: '22px' }}>
@@ -133,18 +133,18 @@ const RegisterForm = ({ onSubmit }: { onSubmit: (data: FormValues) => void }) =>
         </div>
 
         <div>
-          <div css={formStyle.passFieldContainer}>
+          <div css={registerFormStyle.passFieldContainer}>
             <div>
-              <label htmlFor="password" css={[formStyle.labelInput]}>
+              <label htmlFor="password" css={[registerFormStyle.labelInput]}>
                 Password <span>(*)</span>:
               </label>
               <br />
               <div
                 css={[
-                  formStyle.containInput,
-                  formStyle.passField,
-                  errors.password && formStyle.containInputError,
-                  getValues().password && !errors.password && formStyle.containInputSuccess,
+                  registerFormStyle.containInput,
+                  registerFormStyle.passField,
+                  errors.password && registerFormStyle.containInputError,
+                  getValues().password && !errors.password && registerFormStyle.containInputSuccess,
                 ]}
               >
                 <span style={{ width: '20px' }}>
@@ -166,18 +166,18 @@ const RegisterForm = ({ onSubmit }: { onSubmit: (data: FormValues) => void }) =>
             </div>
 
             <div>
-              <label htmlFor="retypepassword" css={[formStyle.labelInput]}>
+              <label htmlFor="retypepassword" css={[registerFormStyle.labelInput]}>
                 Retype password <span>(*)</span>:
               </label>
               <br />
               <div
                 css={[
-                  formStyle.containInput,
-                  formStyle.passField,
-                  errors.retypepassword && formStyle.containInputError,
+                  registerFormStyle.containInput,
+                  registerFormStyle.passField,
+                  errors.retypepassword && registerFormStyle.containInputError,
                   getValues().retypepassword &&
                     !errors.retypepassword &&
-                    formStyle.containInputSuccess,
+                    registerFormStyle.containInputSuccess,
                 ]}
               >
                 <span style={{ width: '20px' }}>
@@ -202,22 +202,24 @@ const RegisterForm = ({ onSubmit }: { onSubmit: (data: FormValues) => void }) =>
           {errors.retypepassword && <h6>{errors.retypepassword?.message}</h6>}
         </div>
 
-        <div css={formStyle.contentTerm}>
+        <div css={registerFormStyle.contentTerm}>
           <div>
             <input type="checkbox" id="term" {...register('termCondition')} />
-            <label css={formStyle.labelInput} htmlFor="term">
+            <label css={registerFormStyle.labelInput} htmlFor="term">
               I agree to terms and conditions.
             </label>
           </div>
           {errors.termCondition && (
-            <h6 css={formStyle.textError}>{errors.termCondition?.message}</h6>
+            <h6 css={registerFormStyle.textError}>{errors.termCondition?.message}</h6>
           )}
         </div>
-        <LongButton
-          label="Sign Up"
+        <Button
+          css={registerFormStyle.btnRegister}
+          label="Login"
           type="submit"
-          icon="register-solid"
-          disabled={!isDirty || !isValid}
+          size="md"
+          prefixIcon={<Icon icon="register-solid" />}
+          // disabled={!isDirty || !isValid}
         />
       </form>
     </>

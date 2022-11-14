@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { yupResolver } from '@hookform/resolvers/yup';
-import LongButton from 'core/components/BaseUI/Button/long-button/long-button';
+import Button from 'core/components/BaseUI/Button';
 import Icon from 'core/components/BaseUI/Icon';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import * as yup from 'yup';
-import { formStyle } from '../RegisterForm/RegisterFormStyles';
+import { registerFormStyle } from '../RegisterForm/RegisterFormStyle';
 
 export type FormValues = {
   email: string;
@@ -31,17 +31,17 @@ const LoginForm = ({ onSubmit }: { onSubmit: (data: FormValues) => void }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} css={[formStyle.self]}>
-        <div css={formStyle.fieldContainer}>
-          <label htmlFor="email" css={[formStyle.labelInput]}>
+      <form onSubmit={handleSubmit(onSubmit)} css={[registerFormStyle.self]}>
+        <div css={registerFormStyle.fieldContainer}>
+          <label htmlFor="email" css={[registerFormStyle.labelInput]}>
             Email: <span>(*)</span>:
           </label>
           <br />
           <div
             css={[
-              formStyle.containInput,
-              errors.email && formStyle.containInputError,
-              getValues().email && !errors.email && formStyle.containInputSuccess,
+              registerFormStyle.containInput,
+              errors.email && registerFormStyle.containInputError,
+              getValues().email && !errors.email && registerFormStyle.containInputSuccess,
             ]}
           >
             <span>
@@ -54,16 +54,16 @@ const LoginForm = ({ onSubmit }: { onSubmit: (data: FormValues) => void }) => {
           {errors.email && <h6>{errors.email?.message}</h6>}
         </div>
 
-        <div css={formStyle.fieldContainer}>
-          <label htmlFor="password" css={[formStyle.labelInput]}>
+        <div css={registerFormStyle.fieldContainer}>
+          <label htmlFor="password" css={[registerFormStyle.labelInput]}>
             Password <span>(*)</span>:
           </label>
           <br />
           <div
             css={[
-              formStyle.containInput,
-              errors.password && formStyle.containInputError,
-              getValues().password && !errors.password && formStyle.containInputSuccess,
+              registerFormStyle.containInput,
+              errors.password && registerFormStyle.containInputError,
+              getValues().password && !errors.password && registerFormStyle.containInputSuccess,
             ]}
           >
             <span>
@@ -85,15 +85,17 @@ const LoginForm = ({ onSubmit }: { onSubmit: (data: FormValues) => void }) => {
 
           {errors.password && <h6>{errors.password?.message}</h6>}
         </div>
-        <div css={formStyle.forgotPw}>
+        <div css={registerFormStyle.forgotPw}>
           <Link to="/forgot-password">Forgot password?</Link>
         </div>
-        <LongButton
+        <Button
+          css={registerFormStyle.btnRegister}
           label="Login"
           type="submit"
-          icon="register-solid"
-          disabled={!isDirty || !isValid}
-        ></LongButton>
+          size="md"
+          prefixIcon={<Icon icon="register-solid" />}
+          // disabled={!isDirty || !isValid}
+        ></Button>
       </form>
     </>
   );

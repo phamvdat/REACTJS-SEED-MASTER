@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import SocialButton from 'core/components/BaseUI/SocialButton/SocialButton';
+import SocialButton from 'core/components/BaseUI/Button/SocialButton/SocialButton';
 import { socialType } from 'core/types/base-ui';
 import { socialFormStyle } from './SocialFormStyles';
 interface Social {

@@ -1,7 +1,7 @@
 import { css, Theme } from '@emotion/react';
 // import { media } from 'core/styles/theme-helper';
 
-export const formStyle = {
+export const registerFormStyle = {
   self: css({}),
   textError: ({ colors }: Theme) =>
     css({
@@ -109,5 +109,11 @@ export const formStyle = {
         textDecoration: 'underline',
         lineHeight: '24px',
       },
+    }),
+  btnRegister: ({ colors }: Theme) =>
+    css({
+      width: '450px',
+      maxWidth: '450px',
+      background: colors.gadient,
     }),
 };

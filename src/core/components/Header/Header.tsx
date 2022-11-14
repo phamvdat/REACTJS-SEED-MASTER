@@ -1,8 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import logo from 'assets/images/imgs/logo.png';
 import { Link } from 'react-router-dom';
-import ShortButton from '../BaseUI/Button/short-button/short-button';
-import ShortSolidButton from '../BaseUI/Button/short-solid-button/short-solid-button';
+import Button from '../BaseUI/Button';
 import { HeaderStyle } from './HeaderStyle';
 export default function Header() {
   return (
@@ -17,10 +16,10 @@ export default function Header() {
           </Link>
           <div className="btns">
             <Link to="/register">
-              <ShortButton label="Sign Up" color="black" css={[HeaderStyle.signInBtn]} />
+              <Button label="Sign in" size="sm" variant="fill" css={[HeaderStyle.signInBtn]} />
             </Link>
             <Link to="/login">
-              <ShortSolidButton label="Login" color="white" />
+              <Button label="Login" size="sm" variant="outlined" css={[HeaderStyle.loginBtn]} />
             </Link>
           </div>
         </div>

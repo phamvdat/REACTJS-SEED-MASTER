@@ -15,6 +15,8 @@ export const themeDark = css`
 
     --text-primary: #ffffff;
     --text-secondary: rgba(255, 255, 255, 0.8);
+
+    --divider-color: #565656;
   }
 `;
 
@@ -26,6 +28,8 @@ export const themeLight = css`
 
     --text-primary: #212121;
     --text-secondary: rgba(33, 33, 33, 0.8);
+
+    --divider-color: #cacaca;
   }
 `;
 

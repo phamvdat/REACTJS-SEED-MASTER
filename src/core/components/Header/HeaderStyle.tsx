@@ -37,5 +37,12 @@ export const HeaderStyle = {
     }),
   signInBtn: css({
     marginRight: '18px',
+    border: '1px solid var(--background-primary)',
   }),
+  loginBtn: ({ colors }: Theme) =>
+    css({
+      ':hover': {
+        border: '1px solid var(--background-primary)',
+      },
+    }),
 };
