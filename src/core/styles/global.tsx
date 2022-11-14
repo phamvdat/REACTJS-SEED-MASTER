@@ -1,27 +1,27 @@
 import { css, Global } from '@emotion/react';
-import LexendMedium from 'assets/fonts/Lexend/Lexend-Medium.ttf';
-import LexendRegular from 'assets/fonts/Lexend/Lexend-Regular.ttf';
-import LexendSemiBold from 'assets/fonts/Lexend/Lexend-SemiBold.ttf';
+import QuicksandMedium from 'assets/fonts/Quicksand/Quicksand-Medium.ttf';
+import QuicksandRegular from 'assets/fonts/Quicksand/Quicksand-Regular.ttf';
+import QuicksandBold from 'assets/fonts/Quicksand/Quicksand-SemiBold.ttf';
 import { root, themeDark, themeLight } from './theme-variables';
 
 const fontFace = css`
   @font-face {
-    font-family: 'Lexend';
+    font-family: 'Quicksand';
     font-style: normal;
     font-weight: 400;
-    src: url(${LexendRegular}) format('truetype');
+    src: url(${QuicksandRegular}) format('truetype');
   }
   @font-face {
-    font-family: 'Lexend';
+    font-family: 'Quicksand';
     font-style: normal;
     font-weight: 500;
-    src: url(${LexendMedium}) format('truetype');
+    src: url(${QuicksandMedium}) format('truetype');
   }
   @font-face {
-    font-family: 'Lexend';
+    font-family: 'Quicksand';
     font-style: normal;
     font-weight: 600;
-    src: url(${LexendSemiBold}) format('truetype');
+    src: url(${QuicksandBold}) format('truetype');
   }
 `;
 
