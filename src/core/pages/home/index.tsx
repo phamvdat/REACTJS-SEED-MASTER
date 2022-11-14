@@ -1,68 +1,79 @@
 /** @jsxImportSource @emotion/react */
-import TradingButton from 'core/components/BaseUI/Button/trading-button/trading-button';
 import Icon from 'core/components/BaseUI/Icon';
-import { ColorType } from 'core/types/base-ui';
-import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { NavLink, useSearchParams } from 'react-router-dom';
 import { HomeStyle } from './home-style';
 
 interface Data {
-  color: ColorType;
   label: string;
 }
 const listItem: Data[] = [
   {
-    color: 'red',
     label: 'Forex',
   },
   {
-    color: 'blue',
     label: 'Commodities',
   },
   {
-    color: 'yellow',
     label: 'Crypto',
   },
   {
-    color: 'red',
     label: 'Stock',
   },
   {
-    color: 'red',
     label: 'Forex',
   },
   {
-    color: 'blue',
     label: 'Commodities',
   },
   {
-    color: 'yellow',
     label: 'Crypto',
   },
   {
-    color: 'red',
     label: 'Stock',
   },
 ];
 
 const HomePage = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [tab, setTab] = useState<string>('general-news');
+  useEffect(() => {
+    setTab(searchParams.get('tab') || '');
+  }, [searchParams]);
   return (
     <div css={HomeStyle.self}>
       <nav css={HomeStyle.navBar}>
         <ul>
-          <li css={HomeStyle.navItemActive}>
-            <NavLink to="/general">General News</NavLink>
+          <li>
+            <NavLink
+              to="/home?tab=general-news"
+              css={tab === 'general-news' && HomeStyle.navItemActive}
+            >
+              General News
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/Forex">Forex</NavLink>
+            <NavLink to="/home?tab=forex" css={tab === 'forex' && HomeStyle.navItemActive}>
+              Forex
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/Crypto">Crypto</NavLink>
+            <NavLink to="/home?tab=crypto" css={tab === 'crypto' && HomeStyle.navItemActive}>
+              Crypto
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/Commodities">Commodities</NavLink>
+            <NavLink
+              to="/home?tab=commodities"
+              css={tab === 'commodities' && HomeStyle.navItemActive}
+            >
+              Commodities
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/Stock">Stock</NavLink>
+            <NavLink to="/home?tab=stock" css={tab === 'stock' && HomeStyle.navItemActive}>
+              Stock
+            </NavLink>
           </li>
         </ul>
         <div css={HomeStyle.wrapperFilter}>
@@ -78,7 +89,7 @@ const HomePage = () => {
             return (
               <li css={HomeStyle.contentItem} key={idx}>
                 <div>
-                  <TradingButton label={data.label} color={data.color} />
+                  {/* <TradingButton label={data.label} color={data.color} /> */}
                   <h6>16.03.2022</h6>
                   <h6>10:25</h6>
                 </div>

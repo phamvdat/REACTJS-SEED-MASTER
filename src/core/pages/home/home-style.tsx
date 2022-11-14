@@ -8,35 +8,52 @@ export const HomeStyle = {
       borderRadius: borderRadius?.sm,
       boxShadow: boxShadow?.primary,
     }),
-
-  navBar: ({ colors, fontSize }: Theme) =>
+  navItemActive: ({ colors, borderRadius }: Theme) =>
+    css({
+      position: 'relative',
+      color: `${colors?.primary?.[100]} !important`,
+      fontWeight: '700 !important',
+      ':before': {
+        content: '""',
+        left: 0,
+        right: 0,
+        height: '5px',
+        borderRadius: borderRadius.sm,
+        background: colors?.primary?.[100],
+        position: 'absolute',
+        bottom: -2,
+      },
+    }),
+  navBar: ({ colors, fontSize, spacing }: Theme) =>
     css({
       height: 59,
-      borderBottom: `2px solid ${colors?.secondary?.[650]}`,
+      borderBottom: '2px solid var(--divider-color)',
       display: 'flex',
       ul: {
         height: '100%',
         flexGrow: 1,
         display: 'inline-flex',
-        li: {
-          height: '100%',
-          flex: '1 1 0px',
-          // flexGrow: 1,
-          textAlign: 'center',
-          margin: '0 10px',
-          a: {
-            marginTop: 24,
-            color: colors?.text?.[500],
-            fontSize: fontSize?.[1],
-            fontWeight: 500,
-            ':hover': {
-              color: colors?.primary?.[100],
-            },
-          },
+      },
+      li: {
+        height: '100%',
+        flex: '1 1 0px',
+        margin: '0 10px',
+      },
+      a: {
+        height: '100%',
+        width: '100%',
+        textAlign: 'center',
+        paddingTop: spacing?.[7],
+        color: 'var(--text-third)',
+        fontSize: fontSize?.[1],
+        fontWeight: 500,
+        ':hover': {
+          color: colors?.primary?.[100],
         },
       },
     }),
-  wrapperFilter: ({ colors, borderRadius }: Theme) =>
+
+  wrapperFilter: ({ colors }: Theme) =>
     css({
       height: '100%',
       float: 'right',
@@ -46,7 +63,7 @@ export const HomeStyle = {
       alignItems: 'end',
       svg: {
         cursor: 'pointer',
-        color: colors?.primary?.[400],
+        color: 'var(--text-primary)',
         marginBottom: '16px',
         ':hover': {
           color: colors?.primary?.[100],
@@ -63,30 +80,14 @@ export const HomeStyle = {
         },
       },
     }),
-  navItemActive: ({ colors, borderRadius }: Theme) =>
-    css({
-      position: 'relative',
-      a: {
-        color: `${colors?.primary?.[100]} !important`,
-        fontWeight: '700 !important',
-      },
-      ':before': {
-        content: '""',
-        width: '96px',
-        height: '5px',
-        borderRadius: borderRadius.sm,
-        background: colors?.primary?.[100],
-        position: 'absolute',
-        bottom: -3,
-      },
-    }),
+
   wrapperListItem: css({}),
   contentItem: ({ colors, fontSize, spacing }: Theme) =>
     css({
       margin: `${spacing?.[4]} ${spacing?.[6]} 0`,
       display: 'flex',
       flexWrap: 'nowrap',
-      borderBottom: `1px solid ${colors?.secondary?.[650]}`,
+      borderBottom: '1px solid var(--divider-color)',
       div: {
         ':first-child': {
           marginRight: spacing?.[5],
@@ -126,22 +127,21 @@ export const HomeStyle = {
     css({
       display: 'flex',
       justifyContent: 'flex-end',
-      marginBottom: spacing?.[4],
-      svg: {
-        marginRight: spacing?.[2],
-      },
+      marginBottom: spacing?.[2],
       span: {
-        verticalAlign: 'center',
         cursor: 'pointer',
         display: 'inline-flex',
         alignItems: 'center',
-        color: colors?.primary?.[400],
+        color: 'var(--text-secondary)',
         fontSize: fontSize?.[0],
         fontWeight: 500,
-        lineHeight: '16px',
         ':first-child': {
           marginRight: spacing?.[4],
         },
+      },
+      svg: {
+        marginRight: spacing?.[2],
+        marginBottom: spacing?.[2],
       },
     }),
 };

@@ -61,7 +61,7 @@ const routesConfig: RouteObject[] = [
         ),
         children: [
           {
-            path: RoutePath.Index,
+            path: RoutePath.Home,
             element: <HomePage />,
           },
           {
